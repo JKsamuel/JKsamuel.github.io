@@ -1,0 +1,195 @@
+I"�!<h1 id="how-to-create-github-pages">How to create GitHub pages</h1>
+<p>For developer, the Github Pages seemed to have a prerequisite. Especially for people like me who have no experience in this industry, it seems more necessary.</p>
+
+<p>To make a GitHub blogs, this seemingly really simple work was actually not easy for me. To create this homepage, I had to find out what Git is and know the git command. And I had to know about Jekyll and Markdown, althogh not yet depp. Moreover I had to know Ruby too.</p>
+
+<p>I need to organize what I studied. I’m going to start with this page.</p>
+
+<hr />
+<h2 id="step1-creating-a-repository-on-github">Step1: Creating a repository on Github</h2>
+<p>Before you starting, absolutely you need an account of Github. If you don’t have, create an account.
+Then you can see ‘+’ on the top right side of the browser and also you can find the green button which are in the red box on the picture below.</p>
+
+<p><img src="/assets/createPages/step1_0.png" alt="Create a repository" /></p>
+
+<p>Once you click the ‘+’ or New button, then you can create a new repository</p>
+
+<p><img src="/assets/createPages/step1_1.png" alt="New repository" /></p>
+
+<p>Like a webpage which has own name, your repository also needs a special name to generate website.</p>
+
+<p><img src="/assets/createPages/step1_2.png" alt="Namning website" /></p>
+<ol>
+  <li><strong>The syntax of respository name</strong>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> username.github.io
+</code></pre></div>    </div>
+    <p>I already created my repository, therefore I put “test” between {username} and {github}
+ (username is your actual GitHub username)
+ According to <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site">GitHub Docs</a>, you must be named user.github.io</p>
+
+    <p>Ref:</p>
+    <ol>
+      <li><a href="https://guides.github.com/features/pages/">GitHub Guides</a></li>
+      <li><a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#types-of-github-pages-sites">About GitHub Pages</a></li>
+    </ol>
+  </li>
+  <li><strong>Select “Public” radio button.</strong></li>
+  <li><strong>Check “Add a README file”</strong></li>
+  <li><strong>Click Create repository.</strong></li>
+</ol>
+
+<p>Conglats! Now you have a repository.</p>
+
+<hr />
+<h2 id="step2-clonning">Step2: Clonning</h2>
+
+<p>I assume that there are many different way to create a pages. My way is below:</p>
+
+<ol>
+  <li>
+    <p>Firstly, you have to create a folder on your laptop or PC. Go back to your repository page on GitHub</p>
+
+    <p><img src="/assets/createPages/step2_0.png" alt="Clone" /></p>
+
+    <p><strong>Click the Code button</strong></p>
+
+    <p><img src="/assets/createPages/step2_1.png" alt="Clone2" /></p>
+
+    <p><strong>Click the button then it will copy your repository address</strong></p>
+  </li>
+  <li>
+    <p>Open your shell(Terminal or iterm2)
+And set the address where you create a new folder</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git clone [copied address] 
+</code></pre></div>    </div>
+
+    <p>e.g.1</p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git clone https://github.com/JKsamuel/JKsamuel.github.io.git
+</code></pre></div>    </div>
+
+    <p>e.g.2</p>
+
+    <p><img src="/assets/createPages/step2_2.png" alt="example" /></p>
+  </li>
+</ol>
+
+<p><strong>Done! Easy!</strong></p>
+
+<p>Now, We need to check it is done.
+Go to the folder you create for git repositor, you can see the README.md and hidden folder named .git
+hidden folder .git is When you init git, then created automatically.</p>
+
+<hr />
+<h2 id="step3-choosing-a-them">Step3: Choosing a them.</h2>
+<p>There are some websites which provide theme.</p>
+
+<p>You can pick one from below.</p>
+
+<ul>
+  <li><a href="https://jamstackthemes.dev">jamstackthemes.dev</a></li>
+  <li><a href="https://jekyllthemes.org">jekyllthemes.org</a></li>
+  <li><a href="https://jekyllthemes.io">jekyllthemes.io</a></li>
+  <li><a href="https://jekyll-themes.com">jekyll-themes.com</a></li>
+</ul>
+
+<p>Or You can find “Settings” under your repository name,</p>
+
+<ol>
+  <li>
+    <p>Click <strong>Settings</strong>.</p>
+
+    <p><img src="/assets/createPages/step3_0.png" alt="step3-0" /></p>
+  </li>
+  <li>
+    <p>In the left sidebar, click <strong>Pages</strong>.</p>
+
+    <p><img src="/assets/createPages/step3_1.png" alt="step3-1" /></p>
+  </li>
+  <li>
+    <p>Click <strong>Choose a theme</strong> button</p>
+
+    <p><img src="/assets/createPages/step3_2.png" alt="step3-2" /></p>
+  </li>
+  <li>
+    <p>You can choose a theme what you want and then <strong>Download</strong> .zip file.</p>
+
+    <p><img src="/assets/createPages/step3_3.png" alt="step3-3" /></p>
+  </li>
+</ol>
+
+<p>Lastly, unzip the downloaded compressed file and copy and paste all the files in that folder into the newly created folder earlier.</p>
+
+<p>So far, three procedures have been a preparation process for creating a web page. It is kind of preparing a canvas to draw.</p>
+
+<hr />
+<h2 id="step4-excute-terminal">Step4: Excute Terminal</h2>
+
+<ol>
+  <li>Go to the position where you created, and init jekyll
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> jekyll new ./
+</code></pre></div>    </div>
+  </li>
+  <li>install bundle
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bundle install
+</code></pre></div>    </div>
+  </li>
+  <li>posting jekyll to local server
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bundle exec jekyll serve
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>and then you can see the server address</p>
+
+    <p><img src="/assets/createPages/step4_0.png" alt="step4-0" /></p>
+
+    <p>Put the address on your browser as above or you can put address as “https://localhost:4000” on your browser.
+   Then you can see what you changed.</p>
+  </li>
+</ol>
+
+<p>This is only hosting a webpage you created on a local computer. When you created and edited the page in the way you wanted, you should upload it to GitHub Pages.</p>
+
+<hr />
+<h2 id="step5-hosting-the-web-to-usernamegithubio">Step5: Hosting the web to “username.github.io”</h2>
+
+<p>To host the webpages we created on GitHub Pages, you need to know the Git command. There seems to be nothing easy in the world.
+(I will post about Git command and what Git is later)
+I had to devote today to creating this page. I would like to define Git as a tool that allows developers to manage and collaborate on versions of programs produced. It’s not official. It’s my own opinion. Fortunately, I wwas able to understand Git a little while learning php language this semester.</p>
+
+<p>anyway, open your Ternimal or iTerm2.
+you go to your respository folder.</p>
+<ol>
+  <li><strong>Check what is changed.</strong>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git status
+</code></pre></div>    </div>
+    <p>The git status command displays the state of the working directory and the staging area.
+ You can realize what has been changed.</p>
+  </li>
+  <li>
+    <p><strong>Adds to the staging area</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git add --all
+</code></pre></div>    </div>
+
+    <p>The git add command adds a change in the working directory to the staging area. 
+ This is not really affect the repository in any significant way-changes are not actually recorded until you run git commit.</p>
+  </li>
+  <li>
+    <p><strong>run git commit</strong></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git commit -m "[Commit message]"
+</code></pre></div>    </div>
+
+    <p>The git commit command captures a snapshot of the project’s currently staged chages. Git will never change them unless you explicity ask it to.</p>
+  </li>
+  <li><strong>Upload</strong>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git push
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>The git push command is used to upload local repository content to remote repository.</p>
+
+<p>Reference: <a href="https://atlassian.com/git/tutorials">Atlassian.com</a></p>
+:ET

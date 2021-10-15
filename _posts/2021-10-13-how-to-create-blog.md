@@ -1,13 +1,12 @@
 ---
-title: Create GitHub Blog
+title: Create GitHub Pages
 layout: post
-post-image: "https://raw.githubusercontent.com/thedevslot/WhatATheme/master/assets/images/SamplePost.png?token=AHMQUEPC4IFADOF5VG4QVN26Z64GG"
-description: This post will giude how to create new blog bt GitHub.
+post-image: /assets/images/howto.png
+description: This post will giude how to create new Github Pages
 tags:
 - Create
 - Blog
 - Git
-- git
 - Pages
 - Terminal
 ---
@@ -15,9 +14,9 @@ tags:
 # How to create GitHub pages
 For developer, the Github Pages seemed to have a prerequisite. Especially for people like me who have no experience in this industry, it seems more necessary.
 
-There are two reasons why I decided to make this page.
-Fistly, in order to get a job.
-Secondly, to organize what I studied.
+To make a GitHub blogs, this seemingly really simple work was actually not easy for me. To create this homepage, I had to find out what Git is and know the git command. And I had to know about Jekyll and Markdown, althogh not yet depp. Moreover I had to know Ruby too.
+
+I need to organize what I studied. I'm going to start with this page.
 
 ___
 ## Step1: Creating a repository on Github
