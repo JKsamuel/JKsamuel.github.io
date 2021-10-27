@@ -23,7 +23,7 @@ layout: page
 
 ## WORK EXPERIENCE
 * Currently, I have no experience in this field.
-* But I wnat to digest many skills step bt step.
+* But I wnat to digest many skills step by step.
 * Before I came to Canada with my family, I had used to work with Korean Army as an officer for 10years. 
 * I did discharge from the army by myself last July 2020. Because I have a passion to study programming.
 
