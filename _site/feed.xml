@@ -1,4 +1,484 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-10-27T13:56:04-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Am becoming a developer</title><subtitle>Prove the process as a Result.</subtitle><entry><title type="html">What is git?</title><link href="http://localhost:4000/blog/what-is-git" rel="alternate" type="text/html" title="What is git?" /><published>2021-10-16T00:00:00-04:00</published><updated>2021-10-16T00:00:00-04:00</updated><id>http://localhost:4000/blog/what-is-git</id><content type="html" xml:base="http://localhost:4000/blog/what-is-git">&lt;h1 id=&quot;what-is-git&quot;&gt;What is git?&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-11-03T22:39:38-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Am becoming a developer</title><subtitle>Prove the process as a Result.</subtitle><entry><title type="html">File I/O and Sorting</title><link href="http://localhost:4000/blog/Read-file-and-sorting" rel="alternate" type="text/html" title="File I/O and Sorting" /><published>2021-11-03T00:00:00-04:00</published><updated>2021-11-03T00:00:00-04:00</updated><id>http://localhost:4000/blog/Read-file-and-sorting</id><content type="html" xml:base="http://localhost:4000/blog/Read-file-and-sorting">&lt;p&gt;This article will show you how to read text files and sort data from them.
+There are several methods for aligning data, however solutions by using Bubble Sort and List’s Sort() method were described.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-approch-the-bubble-sort&quot;&gt;The approch the Bubble Sort&lt;/h1&gt;
+&lt;h2 id=&quot;contentsemployeestxt&quot;&gt;Contents(employees.txt)&lt;/h2&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Bruce Wayne,    123456, 25.88, 35.50
+Clark Kent,     232344, 25.88, 38.75
+Diana Prince,   657659, 27.62, 30.25
+Hal Jordan,     989431, 23.14, 44.25
+Barry Allan,    342562, 25.12, 25.50
+Arthur Curry,   565603, 21.09, 23.75
+John Jones,     812984, 18.99, 32.75
+Dinah Lance,    342988, 18.99, 34.50
+Oliver Queen,   340236, 17.45, 41.25
+Ray Palmer,     120985, 24.75, 40.00
+Ronald Raymond, 239824, 16.43, 35.00
+Carter Hall,    657123, 19.34, 42.75
+Shayera Hol,    761742, 16.73, 38.50
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;create-employee-class&quot;&gt;Create Employee class&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&quot;language-C#&quot;&gt;public Employee()
+  {
+  }
+  /// &amp;lt;summary&amp;gt;
+  /// Four-argument constructor for Employee
+  /// &amp;lt;/summary&amp;gt;
+  /// &amp;lt;param name=&quot;name&quot;&amp;gt;Employee name&amp;lt;/param&amp;gt;
+  /// &amp;lt;param name=&quot;number&quot;&amp;gt;Employee number&amp;lt;/param&amp;gt;
+  /// &amp;lt;param name=&quot;rate&quot;&amp;gt;Hourly rate of pay&amp;lt;/param&amp;gt;
+  /// &amp;lt;param name=&quot;hours&quot;&amp;gt;Hours worked in a week&amp;lt;/param&amp;gt;
+  public Employee(string name, int number, decimal rate, double hours)
+  {
+    /* This is the better way to set data in a class - use the accessor methods.
+     * That way, if their implementation changes, the constructor doesn&apos;t need to
+     * be edited as well.
+     */
+    SetName(name);
+    SetNumber(number);
+    SetRate(rate);
+    SetHours(hours);
+
+    gross = GetGross();
+  }
+
+  // The following Get methods allow for private data retrieval - in the future we&apos;ll use properties
+
+  /// &amp;lt;summary&amp;gt;
+  /// Gross pay get method
+  /// &amp;lt;/summary&amp;gt;
+  /// &amp;lt;returns&amp;gt;Gross pay for the week&amp;lt;/returns&amp;gt;
+  public decimal GetGross() =&amp;gt; (hours &amp;lt; 40) ? (decimal)hours * rate : (40.0m * rate) + (((decimal)hours - 40.0m) * rate * 1.5m);
+
+  /// &amp;lt;summary&amp;gt;
+  /// Hours get method
+  /// &amp;lt;/summary&amp;gt;
+  /// &amp;lt;returns&amp;gt;Hours worked this week&amp;lt;/returns&amp;gt;
+  public double GetHours() =&amp;gt; hours;
+
+  /// &amp;lt;summary&amp;gt;
+  /// Name get method
+  /// &amp;lt;/summary&amp;gt;
+  /// &amp;lt;returns&amp;gt;Employee name&amp;lt;/returns&amp;gt;
+  public string GetName() =&amp;gt; name;
+
+  /// &amp;lt;summary&amp;gt;
+  /// Number get method
+  /// &amp;lt;/summary&amp;gt;
+  /// &amp;lt;returns&amp;gt;Employee number&amp;lt;/returns&amp;gt;
+  public int GetNumber() =&amp;gt; number;
+
+  /// &amp;lt;summary&amp;gt;
+  /// Rate get method
+  /// &amp;lt;/summary&amp;gt;
+  /// &amp;lt;returns&amp;gt;Hourly rate of pay&amp;lt;/returns&amp;gt;
+  public decimal GetRate() =&amp;gt; rate;
+
+  /// &amp;lt;summary&amp;gt;
+  /// Employee display method - in the future, we&apos;ll override the ToString method of Object
+  /// &amp;lt;/summary&amp;gt;
+  public override String ToString() =&amp;gt; $&quot;{GetName(),-20}  {GetNumber():D5}  {GetRate(),6:C}  {GetHours():#0.00}  {GetGross(),9:C}&quot;;
+
+  // The following Set methods allow for private data modification - in the future we&apos;ll use properties
+
+  /// &amp;lt;summary&amp;gt;
+  ///  Hours set method
+  /// &amp;lt;/summary&amp;gt;
+  /// &amp;lt;param name=&quot;hours&quot;&amp;gt;Hours worked this week&amp;lt;/param&amp;gt;
+  public void SetHours(double hours) =&amp;gt; this.hours = hours;
+
+  /// &amp;lt;summary&amp;gt;
+  /// Name set method
+  /// &amp;lt;/summary&amp;gt;
+  /// &amp;lt;param name=&quot;name&quot;&amp;gt;Employee name&amp;lt;/param&amp;gt;
+  public void SetName(string name) =&amp;gt; this.name = name;
+
+  /// &amp;lt;summary&amp;gt;
+  /// Number set method
+  /// &amp;lt;/summary&amp;gt;
+  /// &amp;lt;param name=&quot;number&quot;&amp;gt;Employee number&amp;lt;/param&amp;gt;
+  public void SetNumber(int number) =&amp;gt; this.number = number;
+
+  /// &amp;lt;summary&amp;gt;
+  /// 
+  /// &amp;lt;/summary&amp;gt;
+  /// &amp;lt;param name=&quot;rate&quot;&amp;gt;Hourly rate of pay&amp;lt;/param&amp;gt;
+  public void SetRate(decimal rate) =&amp;gt; this.rate = rate;
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;maincs&quot;&gt;Main.cs&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&quot;language-C#&quot;&gt;class Main
+{
+    /// &amp;lt;summary&amp;gt;
+    /// The main method reads the data file, populates the Employee array and provides a menu of sort options.
+    /// &amp;lt;/summary&amp;gt;
+    /// &amp;lt;param name=&quot;args&quot;&amp;gt;Command line arguments are not used in this program&amp;lt;/param&amp;gt;
+    static void Main(string[] args)
+    {
+        int count;                                      // Keep track of how many employees are instantiated
+        bool loop = true;                               // A loop control variable
+        string input;                                   // The user&apos;s menu option pick as a string
+        int choice;                                     // The user&apos;s menu option pick as an integer
+        Employee[] employees;                           // The array of Employee objects
+
+        // Read the data file to build the Employee array and find out how many there are
+        Read(out employees, out count);
+
+        // Keep the menu loop running so the user can sort several times
+        while (loop)
+        {
+            // Display the menu and retrieve the user&apos;s choice
+            input = Menu();
+
+            // Based on the user&apos;s entry, sort using the appropriate option
+            if (Int32.TryParse(input, out choice))
+            {
+                switch (choice)
+                {
+                    // Sort by employee name - ascending
+                    case 1:
+                        Sort(employees, count, 1);
+                        break;
+
+                    // Sort by employee ID number - ascending
+                    case 2:
+                        Sort(employees, count, 2);
+                        break;
+
+                    // Sort by hourly rate - descending
+                    case 3:
+                        Sort(employees, count, 3);
+                        break;
+
+                    // Sort by weekly hours - descending
+                    case 4:
+                        Sort(employees, count, 4);
+                        break;
+
+                    // Sort by gross pay - descending
+                    case 5:
+                        Sort(employees, count, 5);
+                        break;
+
+                    // Exit the program
+                    case 6:
+                        loop = false;
+                        break;
+
+                    // Trap invalid selections to try again
+                    default:
+                        Console.WriteLine(&quot;\n*** Invalid Choice - Try Again ***\n&quot;);
+                        break;
+                }
+
+                // Display the table when a valid choice is made, otherwise display an error
+                if (choice &amp;gt;= 0 &amp;amp;&amp;amp; choice &amp;lt;= 5)
+                    DisplayTable(employees, count);
+            }
+            else
+                Console.WriteLine(&quot;\n*** Invalid Choice - Try Again ***\n&quot;);
+        }
+    }
+
+    /// &amp;lt;summary&amp;gt;
+    /// This method displays the entire table, including column headers
+    /// &amp;lt;/summary&amp;gt;
+    /// &amp;lt;param name=&quot;employees&quot;&amp;gt;The array of employees&amp;lt;/param&amp;gt;
+    /// &amp;lt;param name=&quot;count&quot;&amp;gt;How many employees are in use&amp;lt;/param&amp;gt;
+    private static void DisplayTable(Employee[] employees, int count)
+    {
+        Console.Clear();
+        Console.WriteLine(&quot;Employee              Number    Rate  Hours  Gross Pay           Nick&apos;s Company&quot;);
+        Console.WriteLine(&quot;====================  ======  ======  =====  =========           --------------&quot;);
+
+        // Display each employee in the array
+        for (int i = 0; i &amp;lt; count; i++)
+          Console.WriteLine(employees[i]); 
+        Console.WriteLine();
+    }
+
+    /// &amp;lt;summary&amp;gt;
+    /// This method displays the menu options to the user and returns their selection
+    /// &amp;lt;/summary&amp;gt;
+    /// &amp;lt;returns&amp;gt;The user&apos;s menu selection&amp;lt;/returns&amp;gt;
+    private static string Menu()
+    {
+        Console.WriteLine(&quot;1. Sort by Employee Name&quot;);
+        Console.WriteLine(&quot;2. Sort by Employee Number&quot;);
+        Console.WriteLine(&quot;3. Sort by Employee Pay Rate&quot;);
+        Console.WriteLine(&quot;4. Sort by Employee Hours&quot;);
+        Console.WriteLine(&quot;5. Sort by Employee Gross Pay&quot;);
+        Console.WriteLine(&quot;\n6. Exit&quot;);
+        Console.Write(&quot;\nEnter choice: &quot;);
+
+        return Console.ReadLine();
+    }
+
+    /// &amp;lt;summary&amp;gt;
+    /// This method reads the data file and stores all of the employee information in an array of Employees
+    /// &amp;lt;/summary&amp;gt;
+    /// &amp;lt;param name=&quot;employees&quot;&amp;gt;The array of employees&amp;lt;/param&amp;gt;
+    /// &amp;lt;param name=&quot;count&quot;&amp;gt;How many employees are in use&amp;lt;/param&amp;gt;
+    private static void Read(out Employee[] employees, out int count)
+    {
+        count = 0;                                    // The current number of employees
+        string input;                                 // One line of data read from the file
+        employees = new Employee[100];                // The Employee array
+
+        try
+        {
+            // Open the file for reading purposes
+            FileStream file = new FileStream(&quot;employees.txt&quot;, FileMode.Open, FileAccess.Read);
+            StreamReader reader = new StreamReader(file);
+
+            // As long as there is data in the file, keep processing 
+            // Each employee record is comma separated, so explode each piece into an array,
+            // create a new employee object and increment the count
+            while ((input = reader.ReadLine()) != null)
+            {
+                string[] exploded = input.Split(&apos;,&apos;);
+                employees[count] = new Employee(exploded[0], int.Parse(exploded[1]), decimal.Parse(exploded[2]), double.Parse(exploded[3]));
+                count++;
+            }
+
+            reader.Close();                             // Always good form to close the file
+        }
+
+        // Just in case the file can&apos;t be found - graceful exit
+        catch (IOException e)
+        {
+            Console.WriteLine(&quot;*** File is empty - Program Aborting ***\n&quot;);
+            Environment.Exit(1);
+        }
+    }
+
+    /// &amp;lt;summary&amp;gt;
+    /// This method uses a Bubble Sort to rearrange the Employee array in order.  Since there are 
+    /// five possible ways to sort, the outer loops remain the same and instead the condition is
+    /// different for each field to sort on.
+    /// &amp;lt;/summary&amp;gt;
+    /// &amp;lt;param name=&quot;emps&quot;&amp;gt;The array of employees&amp;lt;/param&amp;gt;
+    /// &amp;lt;param name=&quot;size&quot;&amp;gt;How many employees are in use&amp;lt;/param&amp;gt;
+    /// &amp;lt;param name=&quot;choice&quot;&amp;gt;The user selected sort choice&amp;lt;/param&amp;gt;
+    public static void Sort(Employee[] emps, int size, int choice)
+    {
+        for (int a = 0; a &amp;lt; size - 1; a++)
+            for (int b = 0; b &amp;lt; size - 1; b++)
+                switch (choice)
+                {
+                    case 1:  // Sort by employee name - ascending
+                        if (emps[b].GetName().CompareTo(emps[b + 1].GetName()) &amp;gt; 0)
+                            Swap(ref emps[b], ref emps[b + 1]);
+                        break;
+
+                    case 2:  // Sort by employee ID - ascending
+                        if (emps[b].GetNumber() &amp;gt; emps[b + 1].GetNumber())
+                            Swap(ref emps[b], ref emps[b + 1]);
+                        break;
+
+                    case 3:  // Sort by hourly rate -descending
+                        if (emps[b].GetRate() &amp;lt; emps[b + 1].GetRate())
+                            Swap(ref emps[b], ref emps[b + 1]);
+                        break;
+
+                    case 4:  // Sort by weekly hours - descending
+                        if (emps[b].GetHours() &amp;lt; emps[b + 1].GetHours())
+                            Swap(ref emps[b], ref emps[b + 1]);
+                        break;
+
+                    case 5:  // Sort by gross pay - descending
+                        if (emps[b].GetGross() &amp;lt; emps[b + 1].GetGross())
+                            Swap(ref emps[b], ref emps[b + 1]);
+                        break;
+                }
+    }
+
+    /// &amp;lt;summary&amp;gt;
+    /// This method is a utility method for the Bubble Sort.  It just swaps two elements in the array
+    /// &amp;lt;/summary&amp;gt;
+    /// &amp;lt;param name=&quot;a&quot;&amp;gt;First employee&amp;lt;/param&amp;gt;
+    /// &amp;lt;param name=&quot;b&quot;&amp;gt;Second employee&amp;lt;/param&amp;gt;
+    private static void Swap(ref Employee a, ref Employee b)
+    {
+        Employee temp;                              // A temporary holding spot for an employee
+
+        temp = a;
+        a = b;
+        b = temp;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&quot;the-approch-sort-method-of-the-list--t--collection&quot;&gt;The approch Sort() method of the List &amp;lt; T &amp;gt; collection&lt;/h1&gt;
+&lt;h2 id=&quot;i-used-a-lambda-expression-for-sotring-instead-of-the-icomparable-techique&quot;&gt;I used a lambda expression for sotring instead of the IComparable techique.&lt;/h2&gt;
+
+&lt;h2 id=&quot;employeecs&quot;&gt;Employee.cs&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&quot;language-C#&quot;&gt;public class Employee
+    {
+        public string Name{ get; set;}                  // The employee name
+        public string Number { get; set; }              // The employee number(Id)
+        public decimal Rate { get; set; }               // The hourly rate
+        public double Hours { get; set; }               // The weekely hours
+        public double OvertimeThreadhold = 40;          // The standard working hours a week
+        public double OvertimeRatio = 1.5;              // Overtime pay ratio
+
+        /// &amp;lt;summary&amp;gt;
+        /// This is Calculated as rate of pay * hours worked and after 40hours overtime is at time and a half.
+        /// &amp;lt;/summary&amp;gt;
+        public decimal Gross                            
+        {
+            get
+            {
+                double overtime = Hours - OvertimeThreadhold;           // Calculate the overtime
+                
+                if (overtime &amp;gt; 0)
+                {
+                    return ((decimal)overtime * Rate * (decimal)OvertimeRatio) + (decimal)OvertimeThreadhold * Rate;
+                }
+                else
+                {
+                    return Rate * (decimal)Hours;
+                }
+            }
+        }
+
+        /// &amp;lt;summary&amp;gt;
+        /// This method will read the employee.txt data file and stores the information in an array of Employee objects
+        /// &amp;lt;/summary&amp;gt;
+        /// &amp;lt;param name=&quot;employeeData&quot;&amp;gt;Using StreamReader class, it will have a information of Employee one by one&amp;lt;/param&amp;gt;
+        /// &amp;lt;param name=&quot;delimiter&quot;&amp;gt;Split by delimeter&amp;lt;/param&amp;gt;
+        /// &amp;lt;returns&amp;gt;Return Employee&apos;s object&amp;lt;/returns&amp;gt;
+        public static Employee Parse(string employeeData, char delimiter = &apos;,&apos;)
+        {
+            try
+            {
+                string[] inputData = employeeData.Split(delimiter);
+                Employee employee = new Employee();
+
+                employee.Name = inputData[0];
+                employee.Number = inputData[1];
+                employee.Rate = decimal.Parse(inputData[2]);
+                employee.Hours = double.Parse(inputData[3]);
+
+                return employee;
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+
+        }
+        /// &amp;lt;summary&amp;gt;
+        /// Override the ToString method of object
+        /// &amp;lt;/summary&amp;gt;
+        /// &amp;lt;returns&amp;gt;&amp;lt;/returns&amp;gt;
+        public override string ToString()
+        {
+            return $&quot;{Name, 20}{Number, 15}{Rate, 15:c2}{Hours, 15:n2}{Gross, 15:c2}&quot;;
+        }
+
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;maincs-1&quot;&gt;Main.cs&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&quot;language-C#&quot;&gt;class Main
+    {
+        /// &amp;lt;summary&amp;gt;
+        /// The main method reads the data file, populates the Employee array and provides a menu of sort options.
+        /// &amp;lt;/summary&amp;gt;
+        /// &amp;lt;param name=&quot;args&quot;&amp;gt;&amp;lt;/param&amp;gt;
+        static void Main(string[] args)
+        {
+            // Open the file for reading purpose
+            StreamReader sr = new StreamReader(&quot;employees.txt&quot;);
+
+            // The List of Employee objects
+            List&amp;lt;Employee&amp;gt; Employees = new List&amp;lt;Employee&amp;gt;();
+            string[] options = { &quot;Sort by Employee Name&quot;, &quot;Sort by Employee Number&quot;, &quot;Sort by Employee Pay Rate&quot;, &quot;Sort by Employee Hours&quot;, &quot;Sort by Employee Gross Pay&quot;, &quot;Exit&quot; };
+            while (!sr.EndOfStream)
+            {
+                Employee employee = Employee.Parse(sr.ReadLine());
+                if(employee != null)
+                {
+                    Employees.Add(employee);
+                }
+            }
+            sr.Close();
+
+            // Keep the menu loop running so the can sort several times.
+            int input = DisplayMenu(options);
+            while (input != 6)
+            {
+                Console.Clear();
+                switch (input)
+                {
+                    //Usig a lambda expression for sorting instead of the IComparable technique.
+                    case 1:
+                        Employees.Sort((Employee x, Employee y) =&amp;gt; x.Name.CompareTo(y.Name));        //Sort by Employee name(ascending)
+                        DisplayList(Employees);
+                        break;
+                    case 2:
+                        Employees.Sort((Employee x, Employee y) =&amp;gt; x.Number.CompareTo(y.Number));    //Sort by Employee number(ascending)
+                        DisplayList(Employees);
+                        break;
+                    case 3:
+                        Employees.Sort((Employee x, Employee y) =&amp;gt; y.Rate.CompareTo(x.Rate));        //Sort by Employee rate(descending)
+                        DisplayList(Employees);
+                        break;
+                    case 4:
+                        Employees.Sort((Employee x, Employee y) =&amp;gt; y.Hours.CompareTo(x.Hours));       //Sort by Employee hours(descending)
+                        DisplayList(Employees);
+                        break;
+                    case 5:
+                        Employees.Sort((Employee x, Employee y) =&amp;gt; y.Gross.CompareTo(x.Gross));      //Sort by Employee gross(descending)
+                        DisplayList(Employees);
+                        break;
+                    default:
+                        input = DisplayMenu(options);
+                        break;
+                }
+                input = DisplayMenu(options);
+            }
+        }
+
+
+        /// &amp;lt;summary&amp;gt;
+        /// This method displays the menu options to the user and returns their selection.
+        /// &amp;lt;/summary&amp;gt;
+        /// &amp;lt;param name=&quot;options&quot;&amp;gt;menu options&amp;lt;/param&amp;gt;
+        /// &amp;lt;returns&amp;gt;Console.ReadLine()&amp;lt;/returns&amp;gt;
+        static int DisplayMenu(string[] options)
+        {
+            for(int i = 0; i &amp;lt; options.Length; i++)
+            {
+                Console.WriteLine($&quot;{i + 1}. {options[i]}&quot;);
+            }
+            Console.WriteLine(&quot;\r\n\r\n&quot;);
+            Console.Write(&quot;Enter option: &quot;);
+
+            return int.Parse(Console.ReadLine());
+        }
+
+        /// &amp;lt;summary&amp;gt;
+        /// This method displays the entire table, including column headers.
+        /// &amp;lt;/summary&amp;gt;
+        /// &amp;lt;param name=&quot;employees&quot;&amp;gt;&amp;lt;/param&amp;gt;
+        static void DisplayList(List&amp;lt;Employee&amp;gt; employees)
+        {
+            string heading = $&quot;{&quot;Name&quot;,20}{&quot;Number&quot;,15}{&quot;Rate&quot;,15:c2}{&quot;Hours&quot;,15:n2}{&quot;Gross&quot;,15:c2}&quot;;
+            Console.WriteLine(heading);
+            Console.WriteLine(new String(&apos;=&apos;, heading.Length));
+            foreach (Employee e in employees)
+            {
+                Console.WriteLine(e);
+            }
+            Console.WriteLine(&quot;\r\n\r\n&quot;);
+        }
+    }
+&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><category term="C#/.NET" /><category term="File I/O" /><category term="Bubble Sort" /><category term="System.Collections.Generic" /><category term="List&lt;T&gt; Class" /><summary type="html">This article will show you how to read text files and sort data from them. There are several methods for aligning data, however solutions by using Bubble Sort and List’s Sort() method were described.</summary></entry><entry><title type="html">What is git?</title><link href="http://localhost:4000/blog/what-is-git" rel="alternate" type="text/html" title="What is git?" /><published>2021-10-16T00:00:00-04:00</published><updated>2021-10-16T00:00:00-04:00</updated><id>http://localhost:4000/blog/what-is-git</id><content type="html" xml:base="http://localhost:4000/blog/what-is-git">&lt;h1 id=&quot;what-is-git&quot;&gt;What is git?&lt;/h1&gt;
 &lt;p&gt;It’s been a little over a year since I officially sutdied programming. In order to solve unknown causes of errors that occur during some assignments, someone’s Git Pages often appeared when googling. This is how I found out that I got to know the word git.&lt;/p&gt;
 
 &lt;ul&gt;

@@ -1,0 +1,22 @@
+I"ï<p>This article will show you how to read text files and sort data from them.
+There are several methods for aligning data, however solutions by using Bubble Sort and Listâ€™s Sort() method were described.</p>
+
+<h1 id="the-approch-the-bubble-sort">The approch the Bubble Sort</h1>
+<h2 id="contentsemployeestxt">Contents(employees.txt)</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Bruce Wayne,    123456, 25.88, 35.50
+Clark Kent,     232344, 25.88, 38.75
+Diana Prince,   657659, 27.62, 30.25
+Hal Jordan,     989431, 23.14, 44.25
+Barry Allan,    342562, 25.12, 25.50
+Arthur Curry,   565603, 21.09, 23.75
+John Jones,     812984, 18.99, 32.75
+Dinah Lance,    342988, 18.99, 34.50
+Oliver Queen,   340236, 17.45, 41.25
+Ray Palmer,     120985, 24.75, 40.00
+Ronald Raymond, 239824, 16.43, 35.00
+Carter Hall,    657123, 19.34, 42.75
+Shayera Hol,    761742, 16.73, 38.50
+</code></pre></div></div>
+
+<h2 id="create-employee-class">Create Employee class</h2>
+:ET
