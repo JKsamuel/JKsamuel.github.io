@@ -1,0 +1,28 @@
+
+- title: Looking into...
+  url: docs
+  links:
+    - title: C#/.NET
+      url: "docs/stream-reader"
+      children:
+        - title: Using streamReader
+          url: "docs/stream-reader"
+    - title: JavaScript
+      url:
+      childeren: 
+    - title: PHP
+      url:      
+      childeren:
+    - title: DataBase
+      url:   
+      childeren:
+    - title: Git
+      url:      
+      childeren:      
+- title: Other
+  url: 
+  links:
+    - title: RESUME
+      url: "about"
+    - title: Tags Page
+      url: "tags"
