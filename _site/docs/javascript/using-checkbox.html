@@ -23,22 +23,19 @@
 <link rel="icon" type="image/png" href="/assets/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/assets/favicons/android-192x192.png"sizes="192x192">
 
-<title>Welcome to Docsy Jekyll</title>
-<meta property="og:title" content="Welcome to Docsy Jekyll" />
-<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-" />
+<title>Output the selected value in the checkbox</title>
+<meta property="og:title" content="Output the selected value in the checkbox" />
+<meta property="og:description" content="Output the selected value in the checkbox(3different ways)" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://localhost:4000" />
 <meta property="og:site_name" content="http://localhost:4000" />
 
-<meta itemprop="name" content="Welcome to Docsy Jekyll">
-<meta itemprop="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-">
+<meta itemprop="name" content="Output the selected value in the checkbox">
+<meta itemprop="description" content="Output the selected value in the checkbox(3different ways)">
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Welcome to Docsy Jekyll"/>
-<meta name="twitter:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-"/>
+<meta name="twitter:title" content="Output the selected value in the checkbox"/>
+<meta name="twitter:description" content="Output the selected value in the checkbox(3different ways)"/>
 
 <link href="/assets/css/syntax.css" rel="stylesheet" >
 <link rel="stylesheet" href="/assets/css/main.css">
@@ -150,6 +147,15 @@ $(document).ready(function() {
                     </a>
                   </li>
                   
+                    <ul>
+                      <li class="collapse show" id="">
+                        
+                          
+                            <a class="td-sidebar-link td-sidebar-link__page " id="m-looking-into-javascript-how-to-handle-the-checkbox-event" href="/docs/javascript/using-checkbox">how to handle the checkbox Event</a>
+                        
+                      </li>
+                    </ul>
+                  
                 
                   <li class="td-sidebar-nav__section-title">
                     <a href="
@@ -226,8 +232,8 @@ $(document).ready(function() {
           </div>
           <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
               <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
-                  <!-- <a href="https://github.com/JKsamuel/edit/master/_posts/2019-06-29-welcome.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/JKsamuel/issues/new?labels=question&title=Question:&body=Question on: https://github.com/JKsamuel/tree/master/_posts/2019-06-29-welcome.md" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+                  <!-- <a href="https://github.com/JKsamuel/edit/master/_docs/javascript/using-checkbox.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/JKsamuel/issues/new?labels=question&title=Question:&body=Question on: https://github.com/JKsamuel/tree/master/_docs/javascript/using-checkbox.md" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 <a href="https://github.com/JKsamuel/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
 this will parse through the header fields and add a button to open
      an issue / ask a question on Github. The editable field should be in
@@ -246,37 +252,90 @@ this will parse through the header fields and add a button to open
               
               
                 <li class="breadcrumb-item">
-                  <a href="http://localhost:4000/2019/">2019</a>
+                  <a href="http://localhost:4000/docs/">Documentation</a>
+                </li>
+                
+                <li class="breadcrumb-item">
+                  <a href="http://localhost:4000/docs/javascript/">Javascript</a>
                 </li>
                 
                 <li class="breadcrumb-item active" aria-current="page">
-	          <a href="http://localhost:4000/2019/welcome/">Welcome to Docsy Jekyll</a>
+	          <a href="http://localhost:4000/docs/javascript/using-checkbox">Output the selected value in the checkbox</a>
                 </li>
                 
 	      </ol>
            </nav>
            <div class="td-content">
-	      <!-- Copyright 2019-2021 Vanessa Sochat-->
-<h1 style="margin-bottom:0px">Welcome to Docsy Jekyll</h1>
-<span class="badge badge-primary">primary-badge</span><span class="badge badge-secondary">secondary-badge</span><span class="badge badge-info">info-badge</span><span class="badge badge-success">success-badge</span>
-<span class="post-date" style="font-style: italic;">June 28, 2019</span>
-<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+	      <h1 id="output-the-selected-value-in-the-checkbox">Output the selected value in the checkbox</h1>
+<p>(3 different ways)</p>
 
-<!--more-->
+<h2 id="1-when-select-a-checkbox-print-out-the-selected-value">1. When select a checkbox, print out the selected value.</h2>
+<h4 id="html">HTML</h4>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;input</span> <span class="na">type = </span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"sports"</span> <span class="na">value=</span><span class="s">"tennis"</span> <span class="na">onclick=</span><span class="s">"getCheckboxValue(event)"</span><span class="nt">&gt;</span>Tennis
+  <span class="nt">&lt;input</span> <span class="na">type = </span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"sports"</span> <span class="na">value=</span><span class="s">"baseball"</span> <span class="na">onclick=</span><span class="s">"getCheckboxValue(event)"</span><span class="nt">&gt;</span>Baseball
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"result"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</code></pre></div></div>
+<h4 id="javascript">JavaScript</h4>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">function</span> <span class="nx">getCheckboxValue</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
+     <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+     <span class="k">if</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">checked</span><span class="p">){</span>
+         <span class="nx">result</span><span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+     <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+         <span class="nx">result</span><span class="o">=</span><span class="dl">""</span><span class="p">;</span>
+     <span class="p">}</span>
+     <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">result</span><span class="dl">"</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">result</span><span class="p">;</span>
+ <span class="p">}</span>
+</code></pre></div></div>
+<p>Create checkbox which has name attribute as sports,
+When call Event on each checkbox the it calls the function ‘getCheckboxValue(event)’</p>
 
-<p>To add new posts, simply add a file in the <code class="language-plaintext highlighter-rouge">_posts</code> directory that follows the convention <code class="language-plaintext highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+<p>About function ‘getCheckboxValue(event)’
+when a value of checkbox.checked is true, then it calls checkbox’s value and display it.</p>
 
-<p>Jekyll also offers powerful support for code snippets:</p>
+<h2 id="2-when-select-a-checkbox-print-out-all-values">2. When select a checkbox, print out all values.</h2>
+<h4 id="html-1">HTML</h4>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;input</span> <span class="na">type = </span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"sports"</span> <span class="na">value=</span><span class="s">"tennis"</span> <span class="na">onclick=</span><span class="s">"getCheckboxValue(event)"</span><span class="nt">&gt;</span>Tennis
+  <span class="nt">&lt;input</span> <span class="na">type = </span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"sports"</span> <span class="na">value=</span><span class="s">"baseball"</span> <span class="na">onclick=</span><span class="s">"getCheckboxValue(event)"</span><span class="nt">&gt;</span>Baseball
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"result"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</code></pre></div></div>
+<h4 id="javascript-1">JavaScript</h4>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">function</span> <span class="nx">getCheckboxValue</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
+     <span class="kd">const</span> <span class="nx">query</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">input[name="animal"]:checked</span><span class="dl">'</span><span class="p">;</span>
+     <span class="kd">const</span> <span class="nx">selectedEls</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="nx">query</span><span class="p">);</span>
+     <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+     <span class="nx">selectedEls</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">el</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+         <span class="nx">result</span> <span class="o">+=</span> <span class="nx">el</span><span class="p">.</span><span class="nx">value</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">;</span>
+     <span class="p">});</span>
+     <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">result</span><span class="dl">"</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">result</span><span class="p">;</span>
+ <span class="p">}</span>
+</code></pre></div></div>
+<p>To get the entire list selected from the entire check box, document.querySelectorAll() function was used.
+This function takes the query statement as a parameter.
+Returns the NodeList containing all elements that satisfy the query statement.</p>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-  <span class="n">puts</span> <span class="s">"Hi, #{name}"</span>
-<span class="n">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+<p>const query = ‘input[name=’animal’]:checked’;
+The query statement used in the example above is search for elements with name=’animal’ and checked=’true’ among all input elements. Since the value returned by the querySelectorAll() function is an element list, use iterations to access each element and get a value value.</p>
 
-<p>Check out the <a href="http://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
+<h2 id="3-when-button-event-occured-print-out-selected-value">3. When button event occured, print out selected value</h2>
+<h4 id="html-2">HTML</h4>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;input</span> <span class="na">type = </span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"sports"</span> <span class="na">value=</span><span class="s">"tennis"</span> <span class="na">onclick=</span><span class="s">"getCheckboxValue(event)"</span><span class="nt">&gt;</span>Tennis
+  <span class="nt">&lt;input</span> <span class="na">type = </span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"sports"</span> <span class="na">value=</span><span class="s">"baseball"</span> <span class="na">onclick=</span><span class="s">"getCheckboxValue(event)"</span><span class="nt">&gt;</span>Baseball
+  <span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">"getCheckboxValue(event)"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"result"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</code></pre></div></div>
+<h4 id="javascript-2">JavaScript</h4>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">function</span> <span class="nx">getCheckboxValue</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
+     <span class="kd">const</span> <span class="nx">query</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">input[name="animal"]:checked</span><span class="dl">'</span><span class="p">;</span>
+     <span class="kd">const</span> <span class="nx">selectedEls</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="nx">query</span><span class="p">);</span>
+     <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+     <span class="nx">selectedEls</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">el</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+         <span class="nx">result</span> <span class="o">+=</span> <span class="nx">el</span><span class="p">.</span><span class="nx">value</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">;</span>
+     <span class="p">});</span>
+     <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">result</span><span class="dl">"</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">result</span><span class="p">;</span>
+ <span class="p">}</span>
+</code></pre></div></div>
 
-
+<p>Nothing special</p>
 
 <script>
   src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
@@ -328,7 +387,7 @@ $.each(headers, function(i, header){
 </script>
 
 <script>
-$('h1').first().append('<div></div>')</script>
+$('h1').first().append('<div><span style="font-size:12px" class="badge badge-primary"><a style="cursor:pointer; color:white" href="http://localhost:4000/tags#Javascript ">Javascript</a></span><span style="font-size:12px" class="badge badge-primary"><a style="cursor:pointer; color:white" href="http://localhost:4000/tags#js ">js</a></span><span style="font-size:12px" class="badge badge-primary"><a style="cursor:pointer; color:white" href="http://localhost:4000/tags#checkbox ">checkbox</a></span></div>')</script>
 
 	
               

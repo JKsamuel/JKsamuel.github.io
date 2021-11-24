@@ -25,5 +25,5 @@ I thought I would simply do Excel, but I didn't know any other programming langu
 It's fun to learn new things one by one.
 Even if it takes time, it's fun to solve the problem step by step.
 
-I'll look for and research to see if there's anything fun going on.
-We're going to make something fun.
+I'll look for and research to see if there's anything fun going on.<br>
+I'm going to make something fun.

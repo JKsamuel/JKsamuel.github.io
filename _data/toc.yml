@@ -3,22 +3,24 @@
   url: docs
   links:
     - title: C#/.NET
-      url: "docs/stream-reader"
+      url: "docs/dotnet/stream-reader"
       children:
         - title: Using streamReader
-          url: "docs/stream-reader"
+          url: "docs/dotnet/stream-reader"
     - title: JavaScript
-      url:
-      childeren: 
+      url: "docs/javascript/using-checkbox"
+      children: 
+        - title: how to handle the checkbox Event
+          url: "docs/javascript/using-checkbox"
     - title: PHP
       url:      
-      childeren:
+      children:
     - title: DataBase
       url:   
-      childeren:
+      children:
     - title: Git
       url:      
-      childeren:      
+      children:      
 - title: Other
   url: 
   links:
