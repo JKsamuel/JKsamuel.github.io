@@ -23,22 +23,19 @@
 <link rel="icon" type="image/png" href="/assets/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/assets/favicons/android-192x192.png"sizes="192x192">
 
-<title>Articles</title>
-<meta property="og:title" content="Articles" />
-<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-" />
+<title>What is Ajax?</title>
+<meta property="og:title" content="What is Ajax?" />
+<meta property="og:description" content="I'm currently learning JavaScript at school, but I'm still don't understand the definition exactly, so I tried googling." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://localhost:4000" />
 <meta property="og:site_name" content="http://localhost:4000" />
 
-<meta itemprop="name" content="Articles">
-<meta itemprop="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-">
+<meta itemprop="name" content="What is Ajax?">
+<meta itemprop="description" content="I'm currently learning JavaScript at school, but I'm still don't understand the definition exactly, so I tried googling.">
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Articles"/>
-<meta name="twitter:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-"/>
+<meta name="twitter:title" content="What is Ajax?"/>
+<meta name="twitter:description" content="I'm currently learning JavaScript at school, but I'm still don't understand the definition exactly, so I tried googling."/>
 
 <link href="/assets/css/syntax.css" rel="stylesheet" >
 <link rel="stylesheet" href="/assets/css/main.css">
@@ -226,8 +223,8 @@ $(document).ready(function() {
           </div>
           <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
               <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
-                  <!-- <a href="https://github.com/JKsamuel/edit/master/pages/archive.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/JKsamuel/issues/new?labels=question&title=Question:&body=Question on: https://github.com/JKsamuel/tree/master/pages/archive.md" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+                  <!-- <a href="https://github.com/JKsamuel/edit/master/_docs/javascript/what-is-ajax.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/JKsamuel/issues/new?labels=question&title=Question:&body=Question on: https://github.com/JKsamuel/tree/master/_docs/javascript/what-is-ajax.md" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 <a href="https://github.com/JKsamuel/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
 this will parse through the header fields and add a button to open
      an issue / ask a question on Github. The editable field should be in
@@ -245,25 +242,66 @@ this will parse through the header fields and add a button to open
 	      <ol class="breadcrumb spb-1">
               
               
+                <li class="breadcrumb-item">
+                  <a href="http://localhost:4000/docs/">Documentation</a>
+                </li>
+                
+                <li class="breadcrumb-item">
+                  <a href="http://localhost:4000/docs/javascript/">Javascript</a>
+                </li>
+                
                 <li class="breadcrumb-item active" aria-current="page">
-	          <a href="http://localhost:4000/archive/">Articles</a>
+	          <a href="http://localhost:4000/docs/javascript/what-is-ajax">What is Ajax?</a>
                 </li>
                 
 	      </ol>
            </nav>
            <div class="td-content">
-	      <h1 id="news-archive">News Archive</h1>
+	      <h1 id="ajax">Ajax</h1>
+<h3 id="ajax-is-not-a-specific-technology-in-itself">Ajax is not a specific technology in itself.</h3>
 
-<h2 class="c-archives__year" id="2019-ref">2019</h2>
-<ul class="c-archives__list">
-<li class="c-archives__item">
-  Jun 28, 2019: <a href="/2019/hello-world/">Two Thousand Nineteen</a>
+<p>Asynchronous JavaScript and XML, while not a technology in itself, is a term coined in 2005 by Jesse James Garrett, that describes a “new” approach to using a number of existing technologies together, including HTML or XHTML, CSS, JavaScript, DOM, XML, XSLT, and most importantly the XMLHttpRequest object. When these technologies are combined in the Ajax model, web applications are able to make quick, incremental updates to the user interface without reloading the entire browser page. This makes the application faster and more responsive to user actions.</p>
+
+<p>Although X in Ajax stands for XML, JSON is preferred over XML nowadays because of its many advantages such as being a part of JavaScript, thus being lighter in size. Both JSON and XML are used for packaging information in the Ajax model.</p>
+
+<p><strong>Reference</strong>: <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX#getting_started">https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX#getting_started</a></p>
+
+<p>According to my prof. Andrzej and Sam, there are two APIs for Ajax.<br />
+The older XMLHttpRequest API is supported on all browsers, but it’s clunky and ugly.<br />
+The new fetch API is much better, but it is not supported on Internet Explorer.</p>
+
+<p>So, I learned useing the fetch API in this course.</p>
+
+<p>Anyway, What is the Ajax?</p>
+
+<p>According to Sam who is professsor Mohawk College, he gave us one of examples, when you start typing in to the Google search box, you immediately get <strong>suggestions</strong> from the Google database about what to search for. When you view a social media feed, it starts you with a small list of items, and as you scroll down, it loads more and more items for an endless news feed. Both of these are examples of Ajax in action.</p>
+
+<p>[example]</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello.txt</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span><span class="na">credentials</span><span class="p">:</span> <span class="dl">'</span><span class="s1">include</span><span class="dl">'</span><span class="p">})</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">text</span><span class="p">())</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">success</span><span class="p">);</span>
+</code></pre></div></div>
+<p><img src="/assets/img/fetchAPI.png" width="400px" height="300px" /></p>
+
+<ul>
+  <li>The second parameter to the fetch call an object literal.<br /></li>
+  <li>In JavaScript, an object is just an associative array.<br /></li>
+  <li>
+    <p>{credentials: include} -&gt; It forces the fetch method to send authorization headers and cookies when it sends the HTTP Request.</p>
+
+    <p>[example the fetch chain for JSON]</p>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="p">{</span><span class="na">credentials</span><span class="p">:</span> <span class="dl">'</span><span class="s1">include</span><span class="dl">'</span><span class="p">})</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">success</span><span class="p">);</span>
+</code></pre></div>    </div>
   </li>
+</ul>
 
-
-<li class="c-archives__item">
-  Jun 28, 2019: <a href="/2019/welcome/">Welcome to Docsy Jekyll</a>
-  </li></ul>
+<p><strong>Reference:</strong></p>
+<ul>
+  <li>MDN Web Docs: <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX">MDN - Ajax</a></li>
+  <li>From my school resources</li>
+</ul>
 
 <script>
   src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
@@ -314,7 +352,8 @@ $.each(headers, function(i, header){
 })
 </script>
 
-
+<script>
+$('h1').first().append('<div><span style="font-size:12px" class="badge badge-primary"><a style="cursor:pointer; color:white" href="http://localhost:4000/tags#Javascript ">Javascript</a></span><span style="font-size:12px" class="badge badge-primary"><a style="cursor:pointer; color:white" href="http://localhost:4000/tags#Ajax ">Ajax</a></span><span style="font-size:12px" class="badge badge-primary"><a style="cursor:pointer; color:white" href="http://localhost:4000/tags#Library ">Library</a></span></div>')</script>
 
 	
               

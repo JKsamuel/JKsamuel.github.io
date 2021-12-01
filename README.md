@@ -1,5 +1,4 @@
 Name: JKsamuel(Jongeun Kim)<br>
-DevSilverBell[Silver:Eun, Bell:Jong]<br>
 Template has been changed by Nov 19, 2021<br>
 
 

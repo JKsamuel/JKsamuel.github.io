@@ -16,12 +16,14 @@ permalink: /about/
   - **IntelliJ**
   - **Visual Studio**
   - **Visual Code**
+  - **Microsift SQL Server Management Studio 18**
 
 
 ## Side Projects
-- Simple Shooting game by pygame(still working on it)
-
-  <img src="/assets/img/ScreenShot_pygame.png" width="400px" height="300px">
+- Simple Shooting game by pygame(**in progress**)
+ 
+  <img src="/assets/img/ScreenShot_pygame.png" width="400px" height="300px"><br>
+  Click here: [pygame](https://github.com/JKsamuel/SimpleShootingGame.git)
 
 ## EDUCATION
 * **559 Software Development** - Mohawk College(Sep 2020 - present, Hamilton, ON)

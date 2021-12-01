@@ -23,22 +23,19 @@
 <link rel="icon" type="image/png" href="/assets/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/assets/favicons/android-192x192.png"sizes="192x192">
 
-<title>Articles</title>
-<meta property="og:title" content="Articles" />
-<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-" />
+<title>To make a simple graphical interface</title>
+<meta property="og:title" content="To make a simple graphical interface" />
+<meta property="og:description" content="Using Graphics objectand Timer control" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://localhost:4000" />
 <meta property="og:site_name" content="http://localhost:4000" />
 
-<meta itemprop="name" content="Articles">
-<meta itemprop="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-">
+<meta itemprop="name" content="To make a simple graphical interface">
+<meta itemprop="description" content="Using Graphics objectand Timer control">
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Articles"/>
-<meta name="twitter:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-"/>
+<meta name="twitter:title" content="To make a simple graphical interface"/>
+<meta name="twitter:description" content="Using Graphics objectand Timer control"/>
 
 <link href="/assets/css/syntax.css" rel="stylesheet" >
 <link rel="stylesheet" href="/assets/css/main.css">
@@ -226,8 +223,8 @@ $(document).ready(function() {
           </div>
           <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
               <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
-                  <!-- <a href="https://github.com/JKsamuel/edit/master/pages/archive.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/JKsamuel/issues/new?labels=question&title=Question:&body=Question on: https://github.com/JKsamuel/tree/master/pages/archive.md" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+                  <!-- <a href="https://github.com/JKsamuel/edit/master/_docs/dotnet/simple-graphical-interface.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/JKsamuel/issues/new?labels=question&title=Question:&body=Question on: https://github.com/JKsamuel/tree/master/_docs/dotnet/simple-graphical-interface.md" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 <a href="https://github.com/JKsamuel/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
 this will parse through the header fields and add a button to open
      an issue / ask a question on Github. The editable field should be in
@@ -245,25 +242,125 @@ this will parse through the header fields and add a button to open
 	      <ol class="breadcrumb spb-1">
               
               
+                <li class="breadcrumb-item">
+                  <a href="http://localhost:4000/docs/">Documentation</a>
+                </li>
+                
+                <li class="breadcrumb-item">
+                  <a href="http://localhost:4000/docs/dotnet/">Dotnet</a>
+                </li>
+                
                 <li class="breadcrumb-item active" aria-current="page">
-	          <a href="http://localhost:4000/archive/">Articles</a>
+	          <a href="http://localhost:4000/docs/dotnet/simple-graphical-interface">To make a simple graphical interface</a>
                 </li>
                 
 	      </ol>
            </nav>
            <div class="td-content">
-	      <h1 id="news-archive">News Archive</h1>
+	      <p>Target framework 4.7.2</p>
 
-<h2 class="c-archives__year" id="2019-ref">2019</h2>
-<ul class="c-archives__list">
-<li class="c-archives__item">
-  Jun 28, 2019: <a href="/2019/hello-world/">Two Thousand Nineteen</a>
-  </li>
+<h1 id="to-make-a-simple-graphical-interface">To make a simple graphical interface</h1>
 
+<p>This was my one of assignment of C# course.</p>
 
-<li class="c-archives__item">
-  Jun 28, 2019: <a href="/2019/welcome/">Welcome to Docsy Jekyll</a>
-  </li></ul>
+<p>I guess the purpose of this assignment seems to be check whether I know how to use timer control.</p>
+
+<p>The output of this assignment is below <br />
+<img src="/assets/img/example.gif" alt="assignment5" /></p>
+
+<p>You may not believe it, but the figure above is a bucket of water. The speed at which water is filled in the bucket is expressed differently using the TrackBar control.</p>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">FrmCanvas</span> <span class="p">:</span> <span class="n">Form</span>
+    <span class="p">{</span>
+        <span class="k">private</span> <span class="n">Graphics</span> <span class="n">graphics</span><span class="p">;</span>
+        <span class="k">private</span> <span class="n">Pen</span> <span class="n">pen</span><span class="p">;</span>
+        <span class="k">private</span> <span class="n">SolidBrush</span> <span class="n">brush</span><span class="p">;</span>
+        <span class="k">private</span> <span class="n">Color</span> <span class="n">c</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">White</span><span class="p">;</span>
+        <span class="k">private</span> <span class="kt">int</span> <span class="n">fillup</span><span class="p">;</span>
+        <span class="k">private</span> <span class="kt">int</span> <span class="n">fallingdown</span><span class="p">;</span>
+        <span class="k">private</span> <span class="kt">bool</span> <span class="n">isSleep</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+
+        <span class="k">public</span> <span class="nf">FrmCanvas</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="nf">InitializeComponent</span><span class="p">();</span>
+            <span class="k">this</span><span class="p">.</span><span class="n">Paint</span> <span class="p">+=</span> <span class="k">new</span> <span class="nf">PaintEventHandler</span><span class="p">(</span><span class="n">Frm_Canvas</span><span class="p">);</span>
+            
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">Frm_Canvas</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">PaintEventArgs</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">graphics</span> <span class="p">=</span> <span class="n">e</span><span class="p">.</span><span class="n">Graphics</span><span class="p">;</span>
+            <span class="n">brush</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">SolidBrush</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+            <span class="n">pen</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Pen</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+            <span class="n">graphics</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="nf">CreateGraphics</span><span class="p">();</span>
+            <span class="n">graphics</span><span class="p">.</span><span class="nf">DrawLine</span><span class="p">(</span><span class="n">pen</span><span class="p">,</span> <span class="m">100</span><span class="p">,</span> <span class="m">300</span><span class="p">,</span> <span class="m">100</span><span class="p">,</span> <span class="m">550</span><span class="p">);</span>
+            <span class="n">graphics</span><span class="p">.</span><span class="nf">DrawLine</span><span class="p">(</span><span class="n">pen</span><span class="p">,</span> <span class="m">400</span><span class="p">,</span> <span class="m">300</span><span class="p">,</span> <span class="m">400</span><span class="p">,</span> <span class="m">550</span><span class="p">);</span>
+            
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">btnColour_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">colorSeletor</span><span class="p">.</span><span class="n">Color</span> <span class="p">=</span> <span class="n">c</span><span class="p">;</span>
+            <span class="n">colorSeletor</span><span class="p">.</span><span class="nf">ShowDialog</span><span class="p">();</span>
+            <span class="n">c</span> <span class="p">=</span> <span class="n">colorSeletor</span><span class="p">.</span><span class="n">Color</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">btnExit_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Application</span><span class="p">.</span><span class="nf">Exit</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">trackBar_Scroll</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">timer_thread</span><span class="p">.</span><span class="nf">Stop</span><span class="p">();</span>
+            <span class="n">lblGauge</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">trackBar</span><span class="p">.</span><span class="n">Value</span><span class="p">.</span><span class="nf">ToString</span><span class="p">();</span>
+            <span class="kt">int</span> <span class="k">value</span> <span class="p">=</span> <span class="n">trackBar</span><span class="p">.</span><span class="n">Value</span><span class="p">;</span>
+            <span class="n">timer_thread</span><span class="p">.</span><span class="n">Interval</span> <span class="p">=</span> <span class="m">100</span> <span class="p">/</span> <span class="k">value</span><span class="p">;</span>
+            <span class="n">timer_thread</span><span class="p">.</span><span class="n">Enabled</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+            
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">timer_thread_Tick</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">x</span> <span class="p">=</span> <span class="m">100</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">y</span> <span class="p">=</span> <span class="m">530</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">width</span> <span class="p">=</span> <span class="m">300</span><span class="p">;</span>
+            <span class="kt">double</span> <span class="n">height</span> <span class="p">=</span> <span class="m">1.5</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">amount</span> <span class="p">=</span> <span class="m">230</span><span class="p">;</span>
+
+            <span class="k">if</span><span class="p">(</span><span class="n">timer_thread</span><span class="p">.</span><span class="n">Enabled</span> <span class="p">&amp;&amp;</span> <span class="n">fillup</span> <span class="p">!=</span> <span class="n">amount</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">Rectangle</span> <span class="n">water</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Rectangle</span><span class="p">(</span><span class="m">125</span><span class="p">,</span> <span class="m">152</span> <span class="p">+</span> <span class="n">fallingdown</span><span class="p">,</span> <span class="m">8</span><span class="p">,</span> <span class="m">400</span><span class="p">);</span>
+                <span class="n">graphics</span><span class="p">.</span><span class="nf">FillRectangle</span><span class="p">(</span><span class="n">brush</span><span class="p">,</span> <span class="n">water</span><span class="p">);</span>
+
+                <span class="n">fillup</span><span class="p">++;</span>
+                <span class="n">Rectangle</span> <span class="n">rects</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Rectangle</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">-</span> <span class="n">fillup</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">height</span><span class="p">);</span>
+
+                <span class="n">graphics</span><span class="p">.</span><span class="nf">FillRectangle</span><span class="p">(</span><span class="n">brush</span><span class="p">,</span> <span class="n">rects</span><span class="p">);</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">fillup</span> <span class="p">==</span> <span class="n">amount</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">timer_thread</span><span class="p">.</span><span class="n">Enabled</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+                    <span class="n">Rectangle</span> <span class="n">screen</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Rectangle</span><span class="p">(</span><span class="m">125</span><span class="p">,</span> <span class="m">152</span><span class="p">,</span> <span class="m">8</span><span class="p">,</span> <span class="m">148</span><span class="p">);</span>
+                    <span class="n">SolidBrush</span> <span class="n">black</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">SolidBrush</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">Black</span><span class="p">);</span>
+                    <span class="n">graphics</span><span class="p">.</span><span class="nf">FillRectangle</span><span class="p">(</span><span class="n">black</span><span class="p">,</span> <span class="n">screen</span><span class="p">);</span>
+
+                <span class="p">}</span>
+            <span class="p">}</span>
+            
+        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<p>I haven’t received feedback on this assignment yet, so I’m not sure how well I did. In fact, I have yet to submit it.</p>
+
+<p>If I think of the <strong>Timer control</strong> as a <strong>loop statement</strong>, I believe it can be easily used. System contains the Timer class, which is useful for Winform applications.</p>
+
+<p>I achieved the above results by utilising the Timer class’s <strong>Tic event</strong> and <strong>Interval method</strong>.</p>
+
+<p>When the Interval method is used to set the interval time and the Timer is enabled, an event occurs after the set time. I used the For loop statement in the Timer Tic event method without realising it. The intended result was for the speed at which the water was filled to vary depending on the value set for TrackBar, but when I wrote the code as shown above, the water was completely filled after the set interval time.</p>
+
+<p>Thus, in the Tic event method, a flag variable called fillup was added and increased one by one each time it was repeated, and Timer was deactivated when the fillup variable reached the set value.</p>
 
 <script>
   src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
@@ -314,7 +411,8 @@ $.each(headers, function(i, header){
 })
 </script>
 
-
+<script>
+$('h1').first().append('<div><span style="font-size:12px" class="badge badge-primary"><a style="cursor:pointer; color:white" href="http://localhost:4000/tags#Graphics object ">Graphics object</a></span><span style="font-size:12px" class="badge badge-primary"><a style="cursor:pointer; color:white" href="http://localhost:4000/tags#Timer control ">Timer control</a></span><span style="font-size:12px" class="badge badge-primary"><a style="cursor:pointer; color:white" href="http://localhost:4000/tags#TrackBar control ">TrackBar control</a></span><span style="font-size:12px" class="badge badge-primary"><a style="cursor:pointer; color:white" href="http://localhost:4000/tags#C# ">C#</a></span><span style="font-size:12px" class="badge badge-primary"><a style="cursor:pointer; color:white" href="http://localhost:4000/tags#.NET ">.NET</a></span></div>')</script>
 
 	
               

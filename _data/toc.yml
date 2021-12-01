@@ -7,11 +7,15 @@
       children:
         - title: Using streamReader
           url: "docs/dotnet/stream-reader"
+        - title: Using timer control
+          url: "docs/dotnet/simple-graphical-interface"
     - title: JavaScript
       url: "docs/javascript/using-checkbox"
       children: 
         - title: how to handle the checkbox Event
           url: "docs/javascript/using-checkbox"
+        - title: AJAX?
+          url: "docs/javascript/what-is-ajax"
     - title: PHP
       url:      
       children:
