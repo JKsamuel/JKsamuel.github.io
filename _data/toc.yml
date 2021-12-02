@@ -9,6 +9,8 @@
           url: "docs/dotnet/stream-reader"
         - title: Using timer control
           url: "docs/dotnet/simple-graphical-interface"
+        - title: Using SqlDataAdapter
+          url: "docs/dotnet/connect-db"
     - title: JavaScript
       url: "docs/javascript/using-checkbox"
       children: 
